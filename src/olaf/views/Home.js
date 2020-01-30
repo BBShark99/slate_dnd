@@ -28,7 +28,8 @@ const getItemStyle = (isDragging, draggableStyle) => ({
   margin: `0 0 ${grid}px 0`,
 
   // change background colour if dragging
-  background: isDragging ? "lightgreen" : "grey",
+  background: isDragging ? "lightgreen" : "rgba(144, 138, 138, 0.3)",
+  borderLeft: "5px solid red",
 
   // styles we need to apply on draggables
   ...draggableStyle
@@ -89,7 +90,12 @@ class Home extends Component {
                         provided.draggableProps.style
                       )}
                     >
-                      <MyObject text={item.content} />
+                      <div className="row">
+                        <div className="col-sm-1"></div>
+                        <div className="col-sm-11">
+                          <MyObject text={item.content} />
+                        </div>
+                      </div>
                     </div>
                   )}
                 </Draggable>
